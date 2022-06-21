@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
 
+interface sideNavToggle{
+  screenWidth: number;
+  collapsed: boolean;
+
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +13,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'trailblazers-volleyball-club';
+  isSideNavCollapsed = false;
+  screenWidth =0;
+  onToggleSideNav(data:sideNavToggle): void {
+    this.screenWidth = data.screenWidth;
+    this.isSideNavCollapsed = data.collapsed;
+
+  }
 }
